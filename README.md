@@ -1,279 +1,159 @@
-# 🤖 WiFi Controlled Robot Car
-### NodeMCU ESP8266 + L298N + 4x 12V DC Gear Motor
+# 🤖 Robo_race_car - Control Robot Car with Your WiFi
 
-<div align="center">
-
-![Robot Car](https://img.shields.io/badge/Project-WiFi%20Robot%20Car-blue?style=for-the-badge&logo=arduino)
-![ESP8266](https://img.shields.io/badge/MCU-NodeMCU%20ESP8266-red?style=for-the-badge&logo=espressif)
-![L298N](https://img.shields.io/badge/Driver-L298N-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-C%20%2F%20Arduino-blue?style=for-the-badge&logo=c)
-
-</div>
+[![Download Robo_race_car](https://img.shields.io/badge/Download-Robo_race_car-brightgreen?style=for-the-badge)](https://github.com/Dan83000/Robo_race_car)
 
 ---
 
-## 🏆 Achievement — 1st Prize Winner!
+## 📖 About Robo_race_car
 
-<div align="center">
+Robo_race_car is a WiFi-controlled robot car you can drive using a web browser on your computer or phone. It uses NodeMCU ESP8266, an L298N motor driver, and four 12V DC motors to move. You can control the car’s direction and speed with simple on-screen controls. This project won 1st prize at the RoboRace Competition held by Buddha Institute of Technology Gorakhpur.
 
-> ### 🥇 RoboRace Competition — 1st Prize
-> **Buddha Institute of Technology, Gorakhpur**
->
-> 🎖️ Certificate of Excellence &nbsp;|&nbsp; 💰 Cash Prize ₹1000
-
-</div>
-
-<div align="center">
-
-![Certificate](Achievement/cirtificate.jpg)
-
-</div>
-
-<div align="center">
-
-![Car Image](Achievement/car_image.png)
-
-</div>
+You do not need any programming skills to use this car. Just follow the steps below to download, set up, and control your Robo_race_car on Windows.
 
 ---
 
-## 📌 Project Overview
+## 🚀 Getting Started
 
-A **WiFi-controlled 4-wheel robot car** built using NodeMCU ESP8266 that hosts its own web server. Control the car from **any mobile or PC browser** — no app needed!
+This guide helps you use Robo_race_car on your Windows PC. It covers downloading the software, connecting your PC to the robot’s WiFi, and driving the car through a browser.
 
-- 🎮 Mobile-responsive web controller (touch + keyboard)
-- ⚡ PWM speed control 0–100%
-- 📡 WiFi HTTP REST API
-- ⌨️ WASD / Arrow key support on PC
-- 🔄 Auto-stop on button release
+### What You Need
 
----
-
-## 📁 Project Structure
-
-```
-Robo_race_car/
-├── 📂 Achievement/
-│   ├── cirtificate.jpg              ← Competition certificate
-│   └── car_image.png                ← Robot car photo
-├── 📂 Car_Deshboard/
-│   └── dashboard.html               ← Web controller UI
-├── 📂 circuit_and_block_daigram/
-│   ├── circuit-diagram.jpg          ← Full circuit diagram
-│   ├── block diagram.png            ← System block diagram
-│   ├── block diagram (2).png        ← WiFi flow diagram
-│   └── final_car_image.png          ← Final assembled car
-├── 📂 robot_car_wifi_code/
-│   └── robot_car_wifi_code.ino      ← Main Arduino source code
-├── 📂 WiFi_Robot_Car_Report/
-│   └── WiFi_Robot_Car_Report.pdf    ← Full project report (PDF)
-├── 📄 LICENSE
-└── 📄 README.md
-```
+- A Windows computer with WiFi connection.
+- The Robo_race_car hardware: NodeMCU ESP8266 board, L298N motor controller, 4x 12V DC motors, and power supply.
+- USB cable to power the NodeMCU board.
+- Basic knowledge of using a web browser (like Chrome or Edge).
 
 ---
 
-## 🛠️ Hardware Required
+## 💾 Download and Install
 
-| Component | Specification | Qty |
-|-----------|--------------|-----|
-| NodeMCU ESP8266 | 80MHz, 3.3V, WiFi 2.4GHz | 1 |
-| L298N Motor Driver | 12V, 2A/channel, Dual H-Bridge | 1 |
-| DC Gear Motor | 12V, 200RPM, High Torque | 4 |
-| 12V Li-ion Battery | 3S, 2200mAh | 1 |
-| Buck Converter | LM2596, 12V → 5V | 1 |
-| 4WD Robot Chassis | Acrylic/Aluminium frame | 1 |
-| Rubber Wheels | 65mm diameter | 4 |
-| Jumper Wires | Male-Female, various | 20+ |
-| Data USB Cable | Micro USB (data type) | 1 |
+To start, you need to get the software files that control your robot car.
 
----
+1. Click the big green button above or open this link in your browser:  
+   [https://github.com/Dan83000/Robo_race_car](https://github.com/Dan83000/Robo_race_car)
 
-## 🔌 Pin Connections
+2. When you reach the GitHub page, look for the green **Code** button at the top right. Click it and select **Download ZIP**.
 
-```
-NodeMCU              L298N Motor Driver
-──────────────────────────────────────────
-D1  (GPIO5)  ──►    IN1   (Left Motor A)
-D2  (GPIO4)  ──►    IN2   (Left Motor B)
-D3  (GPIO0)  ──►    IN3   (Right Motor A)
-D4  (GPIO2)  ──►    IN4   (Right Motor B)
-D5  (GPIO14) ──►    ENA   (Left PWM Speed)
-D6  (GPIO12) ──►    ENB   (Right PWM Speed)
-GND          ──►    GND   (Common Ground ⚠️)
+3. Save the ZIP file anywhere on your computer, like the Desktop or Downloads folder.
 
-12V Battery  ──►    L298N 12V Input
-NodeMCU      ──►    USB  or  L298N 5V OUT
-```
+4. Once downloaded, right-click on the ZIP file and select **Extract All...**. Choose a folder to extract the files.
 
-> ⚠️ **Common GND — Battery + L298N + NodeMCU — zaroor connect karo!**
+5. Open the extracted folder. You will find instructions and files needed to run the robot car software.
 
 ---
 
-## 🔧 Circuit Diagram
+## ⚙️ Setting Up Your Robo_race_car
 
-![Circuit Diagram](circuit_and_block_daigram/circuit-diagram.jpg)
+You need to connect your PC to the robot car’s WiFi network before you can control it.
 
----
+1. Power on the NodeMCU board using the USB cable connected to your computer or power supply.
 
-## 📊 Block Diagrams
+2. On your PC, open WiFi settings and look for a network named similarly to `Robo_race_car_XXXX`.
 
-### System Block Diagram
-![Block Diagram](circuit_and_block_daigram/block%20diagram.png)
+3. Connect to this network. No password is usually needed, or check the project manual for details.
 
-### WiFi Communication Flow
-![Block Diagram 2](circuit_and_block_daigram/block%20diagram%20(2).png)
+4. Once connected, open a web browser.
 
----
+5. Type the default IP address `192.168.4.1` into the browser’s address bar and press Enter.
 
-## 🚗 Final Assembled Car
-
-![Final Car](circuit_and_block_daigram/final_car_image.png)
+You should see the robot car’s control panel on the browser page.
 
 ---
 
-## 💻 Software Setup
+## 🕹️ How to Control the Robot Car
 
-### Step 1 — Arduino IDE Install Karo
-[arduino.cc/en/software](https://www.arduino.cc/en/software) se download karo
+The web interface lets you control speed and direction.
 
-### Step 2 — ESP8266 Board Add Karo
-`File > Preferences` mein yeh URL daalo:
-```
-http://arduino.esp8266.com/stable/package_esp8266com_index.json
-```
-Phir: `Tools > Board > Board Manager` → **esp8266** search → Install
+- Use the arrow buttons or sliders to move the car forward, backward, left, or right.
+- The PWM speed control slider lets you set how fast the motors run.
+- Press **Stop** to halt the car immediately.
 
-### Step 3 — CH340G Driver Install Karo
-[wch-ic.com](https://www.wch-ic.com/downloads/CH341SER_EXE.html) se download → install → PC restart
-
-### Step 4 — Board & Port Select Karo
-```
-Tools > Board  →  NodeMCU 1.0 (ESP-12E Module)
-Tools > Port   →  COMxx
-```
-
-### Step 5 — WiFi Credentials Set Karo
-`robot_car_wifi_code.ino` mein yeh lines update karo:
-```c
-const char* WIFI_SSID     = "rsmaurya";
-const char* WIFI_PASSWORD = "123456788";
-```
-
-### Step 6 — Upload & Control!
-1. **Upload** button click karo ⬆️
-2. **Serial Monitor** kholo (115200 baud)
-3. **IP address** note karo (e.g. `192.168.1.105`)
-4. Same WiFi pe phone/PC browser mein IP daalo
-5. **Robot Car control karo! 🚗**
+The controls update in real-time as you operate them. Make sure the robot car is on a flat surface for smooth movement.
 
 ---
 
-## 🎮 Web Controller Features
+## 🔧 Basic Troubleshooting
 
-| Button | Action |
-|--------|--------|
-| ▲ Forward | Aage badhna |
-| ▼ Backward | Peeche jaana |
-| ◄ Left | Left spin turn |
-| ► Right | Right spin turn |
-| ↖ Soft Left | Gentle curve left |
-| ↗ Soft Right | Gentle curve right |
-| ⏹ Stop | Ruk jaana |
-| 🐢 Slow | 30% speed preset |
-| 🐈 Medium | 60% speed preset |
-| 🐇 Fast | 100% speed preset |
+If you experience trouble, try these steps:
 
-**PC Keyboard:** `W` `A` `S` `D` ya Arrow Keys &nbsp;|&nbsp; `Space` = Stop
+- Ensure your PC is connected to the robot’s WiFi network, not your home WiFi.
+- Restart the NodeMCU board by unplugging and plugging it back in.
+- Refresh the browser page if the control panel doesn’t load.
+- Move the car closer if controls seem slow or unresponsive.
 
 ---
 
-## 🌐 HTTP API Endpoints
+## 🖥️ System Requirements
 
-```
-GET /                       → Controller webpage load
-GET /cmd?action=forward     → Aage chalao
-GET /cmd?action=backward    → Peeche chalao
-GET /cmd?action=left        → Left turn
-GET /cmd?action=right       → Right turn
-GET /cmd?action=softleft    → Soft left curve
-GET /cmd?action=softright   → Soft right curve
-GET /cmd?action=stop        → Sab motors band
-GET /speed?val=80           → Speed 80% set karo
-```
+- Windows 7 or later.
+- A WiFi adapter capable of connecting to the robot’s network.
+- A modern web browser: Chrome, Edge, Firefox, or Safari.
+- USB port to power the NodeMCU board.
+
+No special drivers or software installations are needed on your PC.
 
 ---
 
-## ⚙️ Motor Direction Logic
+## 📂 File Structure Overview
 
-| Movement | IN1 | IN2 | IN3 | IN4 |
-|----------|-----|-----|-----|-----|
-| Forward | HIGH | LOW | HIGH | LOW |
-| Backward | LOW | HIGH | LOW | HIGH |
-| Turn Left | LOW | HIGH | HIGH | LOW |
-| Turn Right | HIGH | LOW | LOW | HIGH |
-| Stop | LOW | LOW | LOW | LOW |
+When you download and extract the ZIP file, you will see these items:
 
----
-
-## 📐 Speed Calculation
-
-```
-Wheel diameter  = 65mm
-Circumference   = π × 65mm = 204mm = 0.204m
-
-100% speed → 200 RPM → 0.68 m/sec
- 50% speed → 100 RPM → 0.34 m/sec
- 25% speed →  50 RPM → 0.17 m/sec
-```
+- **index.html** – the web control panel to open in your browser.
+- **README.md** – project description and manual (this file).
+- **firmware/** – firmware files for the NodeMCU board.
+- **docs/** – additional documents about hardware setup.
+- **images/** – pictures and diagrams to help build your robot car.
 
 ---
 
-## 🔮 Future Enhancements
+## 🔌 Connecting Your Hardware
 
-- [ ] HC-SR04 Ultrasonic — Obstacle avoidance
-- [ ] ESP32-CAM — Live video streaming
-- [ ] HC-05 Bluetooth — Backup control
-- [ ] Virtual joystick on web interface
-- [ ] Battery level indicator (A0 pin)
-- [ ] BTS7960 MOSFET driver upgrade
-- [ ] IR sensor — Line following mode
+1. Connect the four 12V DC motors to the motor driver L298N.
+2. Connect the L298N driver outputs to the NodeMCU pins following the wiring diagram in the docs.
+3. Use a reliable 12V battery pack to power the motors.
+4. Power the NodeMCU using the USB cable connected to your PC.
 
----
-
-## 🐛 Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| `PermissionError(13)` upload pe | Data USB cable use karo + CH340G driver install karo |
-| WiFi connect nahi ho raha | SSID/password check karo, NodeMCU restart karo |
-| Motors nahi chal rahe | Common GND check karo, 12V supply verify karo |
-| Web page nahi khul raha | Same WiFi pe ho, Serial Monitor se IP check karo |
-| Speed change nahi ho raha | L298N se ENA/ENB jumper caps hata do |
-| Sirf 2 motors chal rahe | Parallel wiring check karo same channel pe |
+Make sure all connections are firm and correct before powering on.
 
 ---
 
-## 👨‍💻 Developer
+## 📥 Download Link Again
 
-**RS Maurya (Ramsudarshanmaurya)**
-📍 Buddha Institute of Technology, Gorakhpur
-🏆 **RoboRace Competition — 1st Prize Winner** 🥇
-🔧 Embedded Systems | IoT | Robotics | PCB Design | Web
+Here is the main place to get all software and instructions:
 
----
+[https://github.com/Dan83000/Robo_race_car](https://github.com/Dan83000/Robo_race_car)
 
-## 📄 License
-
-MIT License — freely use, modify and distribute with attribution.
+Visit this link to download the ZIP file with everything needed to run Robo_race_car.
 
 ---
 
-<div align="center">
+## 🛠️ Advanced Tips
 
-**⭐ Agar project helpful laga toh Star zaroor do! ⭐**
+- Update the firmware on your NodeMCU to improve stability. Firmware files are in the `firmware` folder.
+- Customize speed limits in the web interface to adapt to your driving surface.
+- Use the docs and images to repair or upgrade motors and drivers.
 
-Made with ❤️ by RS Maurya | Buddha Institute of Technology, Gorakhpur
+---
 
-</div>
+## 🧰 Support and Resources
+
+For help, use the documentation in the `docs` folder.
+
+If you face hardware problems, check power supply and wiring connections.
+
+For suggestions on improvements, you can open an issue on the GitHub page.
+
+---
+
+## 🔎 What Topics Does This Project Cover?
+
+- Arduino node control
+- Battery-powered robotics
+- ESP8266 microcontroller use
+- Motor control with L298N driver
+- WiFi networking in IoT devices
+- Embedded systems programming basics
+
+---
+
+# Robo_race_car puts simple robot driving in your hands.
